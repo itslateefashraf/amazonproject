@@ -7,7 +7,11 @@
   </head>
   <style>
     body {
-      /* margin-bottom: 20px; */
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     header {
       height: 60px;
@@ -23,7 +27,7 @@
       align-items: center;
       justify-content: space-around;
       position: fixed;
-      top: 0;
+      top: 10px;
       left: 0;
       right: 0;
       z-index: 1000;
@@ -55,13 +59,135 @@
       display: grid;
       grid-template-columns: 1fr 390px;
       column-gap: 12px;
-      align-items: start;
     }
     .cart-summary {
-      background-color: red;
+      border: 1px solid rgb(167, 165, 165);
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
     .payment-summary {
-      background-color: lightblue;
+      border: 1px solid rgb(167, 165, 165);
+      padding: 10px 20px 10px 20px;
+    }
+    .order-summary {
+      margin: 0;
+      font-size: 19px;
+    }
+    .items {
+      margin-top: 7px;
+    }
+    .product-detail {
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
+    .box {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr;
+      column-gap: 24px;
+      margin-top: 10px;
+    }
+    .order-review {
+      font-size: 21px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .cart-title {
+      margin-bottom: 15px;
+    }
+    .delivery-date {
+      font-size: 19px;
+      color: rgb(0, 118, 0);
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    .box2 span {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .box2,
+    .product-price,
+    .product-quantity {
+      margin: 0;
+      margin-top: 7px;
+    }
+    .product-price {
+      color: rgb(177, 39, 4);
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .product-quantity,
+    p {
+      font-size: 17px;
+      margin: 0;
+    }
+    .quantity-items {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .choose-delivery {
+      font-size: 17px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .delivery-time {
+      color: rgb(0, 118, 0);
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .shipping {
+      font-size: 16px;
+      color: rgb(120, 120, 120);
+    }
+    .delivery-ship {
+      margin-top: 10px;
+    }
+    .taxes,
+    .total-tax {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      margin-top: 20px;
+      align-items: center;
+    }
+    .payment {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .checkbox {
+      margin-top: 13px;
+      width: 30px;
+      height: 22px;
+    }
+
+    .total-tax {
+      color: rgb(177, 39, 4);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .total-tax,
+    p {
+      margin-top: 7px;
+    }
+    .place-order {
+      border: 1px solid rgb(225, 210, 0);
+      border-radius: 10px;
+      background-color: rgb(255, 216, 20);
+      width: 100%;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      color: rgb(33, 33, 33);
+      font-size: 15px;
+      cursor: pointer;
     }
   </style>
   <body>
@@ -85,11 +211,68 @@
 
     <main>
       <div class="cart-title">
-        <h4>Review Your Order</h4>
+        <h4 class="order-review">Review Your Order</h4>
       </div>
       <div class="containar">
-        <div class="cart-summary">jnjk</div>
-        <div class="payment-summary">jh</div>
+        <div class="cart-summary">
+          <h4 class="delivery-date">Delivery date: Tuesday, January 9</h4>
+          <div class="box">
+            <img
+              width="100px"
+              src="data/images/adults-plain-cotton-tshirt-2-pack-teal.jpg"
+            />
+            <div class="box2">
+              <span class="product-socks"
+                >Black and Gray Athletic Cotton Socks - 6 Pairs</span
+              >
+              <p class="product-price">$1090</p>
+              <div class="quantity-items">
+                <p class="product-quantity">Qunatity:3</p>
+                <p>update</p>
+                <p>Delete</p>
+              </div>
+            </div>
+            <div class="delivery-option">
+              <p class="choose-delivery">choose a delivery option:</p>
+              <p class="delivery-time">tuesday jan 9</p>
+              <span class="shipping">free shiping</span>
+
+              <div class="delivery-ship">
+                <p class="delivery-time">tuesday jan 9</p>
+                <span class="shipping">free shiping</span>
+              </div>
+
+              <div class="delivery-ship">
+                <p class="delivery-time">tuesday jan 9</p>
+                <span class="shipping">free shiping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="payment-summary">
+          <h2 class="order-summary">order summary</h2>
+          <div class="product-detail">
+            <p class="items">items</p>
+            <span>$558.91</span>
+            <p>Shipping and handling</p>
+            <p>$55.7</p>
+          </div>
+          <div class="taxes">
+            <p>Total before tax:</p>
+            <span>$344.44</span>
+            <p>Estimated tax (10%):</p>
+            <span>$443.2</span>
+          </div>
+          <div class="total-tax">
+            <p>Order total:</p>
+            <span>$645.55</span>
+          </div>
+          <div class="payment">
+            <p>Use pay</p>
+            <input class="checkbox" type="checkbox" />
+          </div>
+          <button class="place-order">place your order</button>
+        </div>
       </div>
     </main>
   </body>
